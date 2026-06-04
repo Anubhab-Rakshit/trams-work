@@ -1,0 +1,194 @@
+.footer {
+  background: var(--color-mint);
+  overflow: hidden;
+}
+
+/* Newsletter strip */
+.newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  padding: 100px 9%;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.nlLeft { flex-shrink: 0; position: relative; }
+
+.nlDecor {
+  position: absolute;
+  top: -40px;
+  left: 20px;
+  width: 80px;
+  height: 40px;
+  opacity: 0.8;
+}
+
+.nlTitle {
+  font-size: clamp(36px, 4vw, 54px);
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: -1.2px;
+  margin-bottom: 16px;
+}
+
+.nlSub {
+  font-size: 15px;
+  color: var(--color-gray);
+  line-height: 1.6;
+}
+
+.nlRight { 
+  flex: 1; 
+  max-width: 480px; 
+  position: relative;
+  z-index: 2;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 100px;
+  padding: 6px 6px 6px 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  margin-bottom: 12px;
+}
+
+.emailInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-family: inherit;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.emailInput::placeholder { color: #aaa; }
+
+.subscribeBtn {
+  background: var(--color-text);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 13px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.25s, transform 0.2s var(--ease-spring);
+}
+.subscribeBtn:hover {
+  background: var(--color-purple);
+  transform: scale(1.04);
+}
+
+.nlNote {
+  font-size: 12px;
+  color: var(--color-gray);
+  padding-left: 24px;
+}
+
+/* Purple blob */
+.blob {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140px; height: 280px;
+  background: var(--color-purple);
+  border-radius: 280px 0 0 280px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ========================
+   Links grid
+   ======================== */
+.links {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(4, 1fr);
+  gap: 40px;
+  padding: 72px 9% 56px;
+}
+
+.brandCol {
+  padding-right: 20px;
+}
+
+.footerLogo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.logoDot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--color-purple);
+  display: inline-block;
+}
+
+.brandTagline {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.copy {
+  font-size: 12px;
+  color: #888;
+}
+
+/* .col styles handled by grid gaps */
+
+.colHead {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+.colLink {
+  display: block;
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 13px;
+  line-height: 1.5;
+  white-space: pre-line;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.colLink:hover {
+  color: var(--color-text);
+  transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .newsletter { flex-direction: column; gap: 40px; }
+  .nlRight { max-width: 100%; width: 100%; }
+  .blob { display: none; }
+  .links { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .newsletter { padding: 60px 5%; }
+  .links { grid-template-columns: repeat(2, 1fr); padding: 48px 5% 40px; }
+  .brandCol { grid-column: span 2; }
+}
+
+@media (max-width: 480px) {
+  .links { grid-template-columns: 1fr; }
+  .brandCol { grid-column: span 1; }
+}
