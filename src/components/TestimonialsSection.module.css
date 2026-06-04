@@ -1,0 +1,169 @@
+.section {
+  padding: 100px 8%;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(124, 58, 237, 0.06);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: 100px;
+  padding: 8px 24px 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-purple);
+  margin-bottom: 28px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badgeIcon {
+  width: 24px; height: 24px;
+  background: var(--color-purple);
+  color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.badgeIcon svg {
+  width: 14px; height: 14px;
+}
+
+.title {
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.15;
+  font-weight: 300;
+  letter-spacing: -1.2px;
+  margin-bottom: 80px;
+}
+
+/* ---- Outer positioning context ---- */
+.quoteOuter {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ---- Testimonial Card ---- */
+.card {
+  background: var(--color-mint);
+  border-radius: 28px;
+  padding: 52px 56px;
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  box-shadow: 0 24px 64px -8px rgba(0,0,0,0.08);
+}
+
+.stars {
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: var(--color-orange);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.quoteText {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #2d2d2d;
+  font-style: normal;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Decorative Quote Marks */
+.quoteMarkLeft, .quoteMarkRight {
+  position: absolute;
+  font-family: serif;
+  font-size: 160px;
+  line-height: 1;
+  color: rgba(0,0,0,0.04);
+  font-weight: 700;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.quoteMarkLeft {
+  top: 10px;
+  left: 20px;
+}
+
+.quoteMarkRight {
+  bottom: 0px;
+  right: 20px;
+  transform: translateY(40%);
+}
+
+.highlight {
+  background: linear-gradient(90deg, var(--color-purple), var(--color-purple-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.authorImg {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.authorName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.authorRole {
+  font-size: 13px;
+  color: var(--color-gray);
+  margin-top: 2px;
+}
+
+.breakoutImg {
+  position: absolute;
+  bottom: -40px;
+  right: -50px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+  z-index: 5;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.1);
+}
+
+/* ---- Floating heads ---- */
+.float {
+  position: absolute;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.10);
+}
+
+.img1 { width:  64px; height:  64px; left: -110px; top:  8%; }
+.img2 { width:  92px; height:  92px; left: -140px; bottom: 18%; }
+.img3 { width:  76px; height:  76px; left: -50px;  bottom: -60px; }
+.img4 { width:  72px; height:  72px; right: -110px; top: -20px; }
+.img5 { width: 128px; height: 128px; right: -160px; bottom: -40px; }
+
+@media (max-width: 1100px) { .float { display: none; } }
+
+@media (max-width: 768px) {
+  .card { padding: 36px 28px; }
+}

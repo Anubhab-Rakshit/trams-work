@@ -1,0 +1,115 @@
+/* =====================
+   HEADER
+   ===================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 7%;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: padding 0.3s var(--ease-smooth), box-shadow 0.3s;
+}
+
+.header.scrolled {
+  padding: 18px 7%;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.06);
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-purple);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 14.5px;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-purple);
+  border-radius: 2px;
+  transition: width 0.28s var(--ease-spring);
+}
+
+.navLink:hover::after { width: 100%; }
+.navLink:hover { color: var(--color-purple); }
+
+/* CTA pill */
+.ctaBtn {
+  background: var(--color-text);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: background 0.25s, transform 0.2s var(--ease-spring);
+}
+.ctaBtn:hover {
+  background: var(--color-purple);
+  transform: scale(1.04);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.25s;
+}
+
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .hamburger { display: flex; }
+}
